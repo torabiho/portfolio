@@ -418,6 +418,7 @@ a.selected {
 }
 
 .navbar .logo-container .menu-item__link {
+  width: 0;
   margin-top: -50px;
   transition: margin-top 0.5s;
 }
@@ -626,6 +627,11 @@ a.selected {
   }
 }
 
+.header-sub {
+  margin: 72px auto 0 auto;
+  max-width: 600px;
+}
+
 .title-page {
   text-align: center;
   padding: 56px 16px;
@@ -721,6 +727,13 @@ a.selected {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  padding: 0 24px;
+}
+
+@media only screen and (min-width: 425px) {
+  .work__container {
+    padding: 0 48px;
+  }
 }
 
 @media only screen and (min-width: 769px) {
@@ -729,6 +742,13 @@ a.selected {
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
             flex-direction: row;
+    padding: 0 32px;
+  }
+}
+
+@media only screen and (min-width: 993px) {
+  .work__container {
+    padding: 0 64px;
   }
 }
 
@@ -737,14 +757,6 @@ a.selected {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  padding: 8px 16px;
-}
-
-@media only screen and (min-width: 425px) {
-  .work-categories__wrapper {
-    margin-left: 7%;
-    padding: 8px;
-  }
 }
 
 @media only screen and (min-width: 601px) {
@@ -755,13 +767,6 @@ a.selected {
     -webkit-box-flex: 1;
         -ms-flex: 1;
             flex: 1;
-    padding: 20px 8px;
-  }
-}
-
-@media only screen and (min-width: 425px) {
-  .work-items__wrapper {
-    margin-left: 7%;
   }
 }
 
@@ -775,8 +780,6 @@ a.selected {
             flex: 3;
     -ms-flex-flow: row wrap;
         flex-flow: row wrap;
-    padding: 12px;
-    margin-left: 0;
   }
 }
 
@@ -986,6 +989,11 @@ a.selected {
 /* ==================================================
    Section Education
 ================================================== */
+.sub-title {
+  text-align: left;
+  margin: 32px 0;
+}
+
 .school__items {
   padding: 0 16px;
 }
@@ -1063,6 +1071,174 @@ a.selected {
   .school_item__image__container {
     hmargin: 0 auto;
   }
+}
+
+/* ==================================================
+   Case Studies
+================================================== */
+.caseStudies {
+  padding: 0 24px 24px 24px;
+}
+
+@media only screen and (min-width: 425px) {
+  .caseStudies {
+    padding: 0 48px 48px 48px;
+  }
+}
+
+@media only screen and (min-width: 769px) {
+  .caseStudies {
+    padding: 0 32px 32px 32px;
+  }
+}
+
+@media only screen and (min-width: 993px) {
+  .caseStudies {
+    padding: 0 64px 64px 64px;
+  }
+}
+
+.caseStudies .title-description {
+  margin-bottom: 16px;
+  color: white;
+}
+
+/* Style the buttons that are used to open and close the accordion panel */
+.accordion {
+  background-color: #eee;
+  color: #444;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  text-align: left;
+  border: none;
+  outline: none;
+  transition: 0.4s;
+}
+
+/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+.active, .accordion:hover {
+  background-color: #ccc;
+}
+
+/* Style the accordion panel. Note: hidden by default */
+.panel {
+  background-color: transparent;
+  color: #a6a5a6;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.panel:last-child {
+  border-bottom: solid thin;
+}
+
+.panel .caseStudies__details {
+  padding: 16px;
+  overflow-y: scroll;
+  min-height: 200px;
+  list-style-type: circle;
+}
+
+.panel .caseStudies__details--text:not(:last-child) {
+  margin-bottom: 16px;
+}
+
+.panel .caseStudies__details--list {
+  padding-left: 28px;
+}
+
+.panel .caseStudies__details--list li:not(:last-child) {
+  margin-bottom: 8px;
+}
+
+.panel .caseStudies__slideshow {
+  position: relative;
+  margin-top: 16px;
+}
+
+.panel .caseStudies__slideshow .mySlides1,
+.panel .caseStudies__slideshow .mySlides2 {
+  width: 100%;
+}
+
+.panel .caseStudies__slideshow .display-left-1,
+.panel .caseStudies__slideshow .display-right-1,
+.panel .caseStudies__slideshow .display-left-2,
+.panel .caseStudies__slideshow .display-right-2 {
+  position: absolute;
+  top: calc(50% - 25px);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 50px;
+  height: 50px;
+  opacity: 0.5;
+  color: #343334;
+  border: none;
+  background: #777677;
+  transition: opacity 0.5s;
+  padding-top: 8px;
+}
+
+.panel .caseStudies__slideshow .display-left-1:hover,
+.panel .caseStudies__slideshow .display-right-1:hover,
+.panel .caseStudies__slideshow .display-left-2:hover,
+.panel .caseStudies__slideshow .display-right-2:hover {
+  opacity: 1;
+}
+
+.panel .caseStudies__slideshow .display-left-1,
+.panel .caseStudies__slideshow .display-left-2 {
+  padding-right: 12px;
+}
+
+.panel .caseStudies__slideshow .display-right-1,
+.panel .caseStudies__slideshow .display-right-2 {
+  right: 0;
+}
+
+@media only screen and (min-width: 993px) {
+  .panel {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+  .panel .caseStudies__details {
+    width: 80%;
+  }
+  .panel .caseStudies__slideshow {
+    margin-top: 0;
+  }
+}
+
+.accordion:after {
+  content: '\02795';
+  /* Unicode character for "plus" sign (+) */
+  font-size: 13px;
+  color: #777;
+  float: right;
+  margin-left: 5px;
+}
+
+.active:after {
+  content: "\2796";
+  /* Unicode character for "minus" sign (-) */
 }
 
 .contact__container {
